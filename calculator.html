@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        h1 {
+            justify-content: center;
+            text-align: center;
+            background: rgb(56, 56, 56);
+            color: azure;
+            border-radius: 10px;
+
+        }
+
+        .center1 {
+            justify-content: center;
+            text-align: center;
+            justify-items: center;
+        }
+
+        .center {
+            /* margin: auto; */
+            justify-content: center;
+            text-align: center;
+            justify-items: center;
+            background: rgb(56, 56, 56);
+        }
+
+        body {
+            /* border: 2px solid black;
+        width: 500px; */
+            /* text-align: center; */
+            width: 450px;
+            font-family: 'Arial';
+            margin: 25px auto;
+            padding: 10px;
+            border-radius: 3px;
+            /* background: rgb(238, 137, 137); */
+            /* border-collapse: collapse; */
+            border: 1px solid rgb(99, 96, 96);
+            border-bottom: 3px solid #00cccc;
+            border-top: 3px solid hsl(357, 80%, 70%);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.10),
+                0px 10px 20px rgba(0, 0, 0, 0.05),
+                0px 20px 20px rgba(0, 0, 0, 0.05),
+                0px 30px 20px rgba(0, 0, 0, 0.05)
+        }
+
+        .button {
+            height: 50px;
+            width: 71px;
+            /* background: rgb(238, 137, 137); */
+            margin: 5px;
+            border-radius: 5px;
+            padding: 5px;
+            border: 1px solid rgb(99, 96, 96);
+            border-left: 3px solid #725c4f;
+            border-right: 3px solid hsl(103, 18%, 54%);
+            box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.10),
+                0px 10px 20px rgba(0, 0, 0, 0.05),
+                0px 20px 20px rgba(0, 0, 0, 0.05),
+                0px 30px 20px rgba(0, 0, 0, 0.05)
+        }
+
+        .button1 {
+            height: 50px;
+            width: 71px;
+        }
+
+        .output {
+            border: 1px solid black;
+            height: 70px;
+            width: 300px;
+            border-radius: 15px;
+            font-size: 50px;
+        }
+
+        .padding {
+            padding: 15px;
+        }
+
+        .btn-margin {
+            margin: 10px;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 id="text">calculator</h1>
+    <hr>
+
+    <div class="center">
+
+        <form name="button">
+            <input class="output padding center1" type="text" id="display">
+            <!-- <div class="output padding center" id="display" disabled></div> -->
+
+        </form>
+    </div>
+    <!-- <form name="button"> -->
+    <div class="calculator center">
+
+        <div class="padding">
+            <button class="button btn-margin" id="btn-7" value="7">7</button>
+            <button class="button btn-margin" id="btn-8" value="8">8</button>
+            <button class="button btn-margin" id="btn-9" value="9">9</button>
+            <!-- <button class="button btn-margin" id="btn-/" value="/">/</button> -->
+            <button class="button1 btn-margin" id="btn-c" value="." onclick="clr()">CLR</button>
+
+        </div>
+
+        <div class="padding">
+
+            <button class="button btn-margin" id="btn-4" value="4">4</button>
+            <button class="button btn-margin" id="btn-5" value="5">5</button>
+            <button class="button btn-margin" id="btn-6" value="6">6</button>
+            <button class="button btn-margin" id="btn-" value="">*</button>
+        </div>
+
+        <div class="padding">
+            <button class="button btn-margin" id="btn-1" value="1">1</button>
+            <button class="button btn-margin" id="btn-2" value="2">2</button>
+            <button class="button btn-margin" id="btn-3" value="3">3</button>
+            <button class="button btn-margin" id="btn-" value="-">-</button>
+
+        </div>
+
+        <div class="padding">
+
+            <button class="button1 btn-margin button" id="btn-=" value="=" onclick="myfunction()">=</button>
+            <button class="button btn-margin" id="btn-0" value="0">0</button>
+            <!-- <button class="button1 btn-margin" id="btn-c" value="." onclick="clr()">CLR</button> -->
+            <button class="button btn-margin" id="btn-/" value="/">/</button>
+            <button class="button btn-margin" id="btn-+" value="+">+</button>
+        </div>
+    </div>
+
+    <!-- </form> -->
+    <div id="update"></div>
+    <script>
+
+        function clr() {
+            // document.getElementById("edu").value = ""
+            button.display.value = ""
+        }
+        function myfunction() {
+            var test = document.getElementById("display").value;
+
+            // console.log(test);
+            // var total1 = 56 + 35 + 41 + 70 + 35 + 45
+            // var total = 450 ;
+            // var sub = 6; 
+
+            // update.innerHTML = test;
+            // button.display.value = eval(total1 / sub)
+            button.display.value = eval(button.display.value);
+        }
+
+
+        function some() {
+            console.log("hi")
+            // button.display.value = eval(button.display.value)
+
+        }
+
+        document.querySelectorAll('.button').forEach(item => {
+            item.addEventListener('click', event => {
+                // console.log(e.target.value);
+                var out = event.target.value;
+                var test
+                test += out;
+                // button.display.innerHTML += out;
+                button.display.value += out
+            })
+        })
+
+
+
+    </script>
+
+</body>
+
+</html>
